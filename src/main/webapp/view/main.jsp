@@ -7,24 +7,90 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	.box
-	{
-		width: 80%;
-		height: 200px;
-		border: 1px solid black;
-		margin: auto;
-		text-align: center;
-		line-height: 200px;
-		color: white;
-		font-weight: bold;
-		display: none;
-	}
-	#btn
-	{
-		width: 200px;
-		margin: auto;
-	}
+#logo 
+{
+	text-align: left;
+	width: 10%;
+	height: auto;
+	float: left
+}
 
+#login 
+{
+	text-align: right;
+	width: 90%;
+	height: auto;
+	float: right;
+}
+#login .a
+{
+	font-size: 12px;
+	text-decoration: none;
+}
+
+#topMenu 
+{ 
+	height:50px; 
+	width:850px;
+
+	
+}
+
+#topMenu ul li 
+{ 
+	list-style:none; 
+	float:left; 
+	line-height:30px; 
+	text-align:center;
+}
+
+#topMenu .menuLink 
+{ 
+	background-color: black;
+	text-decoration:none; 
+	color:white;
+	display:block; 
+	width:250px; 
+	font-size:15px; 
+	font-weight:bold; 
+	text-align: center;
+	height: 50px;
+	margin-top: 20px;
+}
+
+#topMenu .menuLink:hover 
+{ 
+	color:red; 
+	background-color:#4d4d4d;
+	
+	
+}
+
+.box 
+{
+	width: 80%;
+	height: 200px;
+	border: 1px solid black;
+	margin: auto;
+	text-align: center;
+	line-height: 200px;
+	color: white;
+	font-weight: bold;
+	display: none;
+}
+
+#btn 
+{
+	width: 200px;
+	margin: auto;
+}
+
+button 
+{
+	width: 20%;
+	height: 50px;
+	margin: 0px;
+}
 </style>
 <script type="text/javascript">
 	function setOne() 
@@ -72,24 +138,25 @@
 <body>
 	<img alt="" src="">
 	<div>
-		<div style="text-align: right;">
-			<%--로고 --%>
-			<span style="text-align: left;">
-				<img alt="" src="../img/light.gif" style="width:50px; text-align: left;">
-			</span>
-			<%--login/pw --%>
-			<a href="">로그인</a>
-			<a href="">마이페이지</a>
-		</div>
 		<div>
-			<%--menu --%>
-			<ul style="text-align: center;">
-				<button value="" onclick="">시작하기</button>
-				<button value="" onclick="">가이드</button>
-				<button value="" onclick="">문의 / 공지</button>
-			
-			</ul>
+			<div>
+				<%--로고 --%>
+				<a href="main.jsp"><img alt="" src="../img/logo.PNG" id="logo"></a>
+			</div>
+			<div id="login">
+				<%--login/pw --%>
+				<a href="" class="a">로그인</a>
+				<a href="" class="a">마이페이지</a>
+			</div>
 		</div>
+		<%-- 메뉴 --%>
+		<div id="topMenu">
+        	<ul>
+     			<li><a class="menuLink" href="#"> 시작하기 </a></li>
+     			<li><a class="menuLink" href="#"> 가이드 </a></li>
+    		    <li><a class="menuLink" href="#"> 문의 / 공지 </a></li>
+        	</ul>
+        </div>
 		<div>
 			<%--중앙 가이드, 시작하기 --%>
 			<img alt="" src="">
@@ -121,12 +188,12 @@
 			<%-- 이전 --%>
 			<c:choose>
 				<c:when test="${pvo.beginBlock <= pvo.pagePerBlock }">
-					<span style="color: gray; padding: 5px; border: 1px solid gray">이전으로</span>
+					<span style="color: gray; padding: 5px; border: 1px solid gray"> << </span>
 				</c:when>
 				<c:otherwise>
 					<span style="color: tomato; padding: 5px; border: 1px solid tomato">
 						<a
-						href="">이전으로</a>
+						href=""> << </a>
 					</span>
 				</c:otherwise>
 			</c:choose>
@@ -149,11 +216,11 @@
 			<%-- 다음 --%>
 			<c:choose>
 				<c:when test="${pvo.endBlock >= pvo.totalPage }">
-					<span style="color: gray; padding: 5px; border: 1px solid gray">다음으로</span>
+					<span style="color: gray; padding: 5px; border: 1px solid gray"> >> </span>
 				</c:when>
 				<c:otherwise>
 					<span style="color: tomato; padding: 5px; border: 1px solid tomato">
-						<a href="">다음으로</a>
+						<a href=""> >> </a>
 					</span>
 				</c:otherwise>
 			</c:choose>
