@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,7 @@
 		width: 200px;
 		margin: auto;
 	}
+
 </style>
 <script type="text/javascript">
 	function setOne() 
@@ -70,17 +72,22 @@
 <body>
 	<img alt="" src="">
 	<div>
-		<div>
+		<div style="text-align: right;">
 			<%--로고 --%>
-			<img alt="" src="">
+			<span style="text-align: left;">
+				<img alt="" src="../img/light.gif" style="width:50px; text-align: left;">
+			</span>
+			<%--login/pw --%>
+			<a href="">로그인</a>
+			<a href="">마이페이지</a>
+		</div>
+		<div>
 			<%--menu --%>
-			<ul>
+			<ul style="text-align: center;">
 				<button value="" onclick="">시작하기</button>
 				<button value="" onclick="">가이드</button>
 				<button value="" onclick="">문의 / 공지</button>
-			<%--login/pw --%>
-				<a href="">로그인</a>
-				<a href="">마이페이지</a>
+			
 			</ul>
 		</div>
 		<div>
@@ -88,39 +95,68 @@
 			<img alt="" src="">
 		</div>
 		<div>
-			<img name="img1" alt="" src=""> 
-			<img name="img2" alt="" src="">
-			<img name="img3" alt="" src=""> 
-			<img name="img4" alt="" src="">
+			<img name="img1" alt="" src=""> <img name="img2" alt="" src="">
+			<img name="img3" alt="" src=""> <img name="img4" alt="" src="">
 			<img name="img5" alt="" src="">
 
 			<%--가이드이미지 --%>
 			<div id="img1" class="box">
-				<img alt="" src="../img/dark.gif">
+				<img alt=".." src="img/dark.gif" onclick="setOne()">1
 			</div>
 			<div id="img2" class="box">
-				<img alt="" src="../img/light.gif">
+				<img alt=".." src="../img/light.gif" onclick="setTwo()">2
 			</div>
 			<div id="img3" class="box">
-				<img alt="" src="../img/pic1.jpg">
+				<img alt="" src="../img/pic1.jpg" onclick="setThree()">3
 			</div>
 			<div id="img4" class="box">
-				<img alt="" src="../img/pic2.jpg">
+				<img alt="" src="../img/pic2.jpg" onclick="setFour()">4
 			</div>
 			<div id="img5" class="box">
-				<img alt="" src="../img/pic3.jpg">
+				<img alt="" src="../img/pic3.jpg" onclick="setFive()">5
 			</div>
 			<div id="box3" class="box" style="background-color: blue;">BOX3</div>
-			<%--버튼 --%>
-			<div id="btn">
-				<button onclick="setOne()">1</button>
-				<button onclick="setTwo()">2</button>
-				<button onclick="setThree()">3</button>
-				<button onclick="setFour()">4</button>
-				<button onclick="setFive()">5</button>
-				<!-- <button onclick="setGreen()">GREEN</button>
-				<button onclick="setBlue()">BLUE</button> -->
-			</div>
+			
+			
+			<%-- 이전 --%>
+			<c:choose>
+				<c:when test="${pvo.beginBlock <= pvo.pagePerBlock }">
+					<span style="color: gray; padding: 5px; border: 1px solid gray">이전으로</span>
+				</c:when>
+				<c:otherwise>
+					<span style="color: tomato; padding: 5px; border: 1px solid tomato">
+						<a
+						href="">이전으로</a>
+					</span>
+				</c:otherwise>
+			</c:choose>
+			&nbsp;&nbsp;
+			<%-- 번호 --%>
+			<c:forEach begin="${pvo.beginBlock }" end="${pvo.endBlock }" step="1"
+				var="k">
+				<c:choose>
+					<c:when test="${k==pvo.nowPage}">
+						<span style="background-color: tomato; padding: 5px;">${k}</span>
+					</c:when>
+					<c:otherwise>
+						<span style="color: tomato; padding: 5px;"> 
+							<a href="">${k}</a>
+						</span>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+			&nbsp;&nbsp;
+			<%-- 다음 --%>
+			<c:choose>
+				<c:when test="${pvo.endBlock >= pvo.totalPage }">
+					<span style="color: gray; padding: 5px; border: 1px solid gray">다음으로</span>
+				</c:when>
+				<c:otherwise>
+					<span style="color: tomato; padding: 5px; border: 1px solid tomato">
+						<a href="">다음으로</a>
+					</span>
+				</c:otherwise>
+			</c:choose>
 		</div>
 	</div>
 	
