@@ -11,50 +11,63 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>Document</title>
 <style type="text/css">
+button {
+	width: 15%;
+	height: 50px;
+	margin: 0px;
+}
+
+.btn {
+	background-color: wheat;
+	text-align: center;
+	border: 1px solid wheat;
+	position: absolute;
+	top: 60%;
+}
+
+.b2 {
+	background-color: wheat;
+	border: 1px solid wheat;
+	float: right;
+	margin: 200px 10px 10px 10px;
+}
+
+.b {
+	background-color: wheat;
+	border: 1px solid wheat;
+	float: left;
+	margin: 200px 10px 10px 10px;
+}
+
+img {
+	width: 100%;
+	height: 500px;
+}
+
 .box {
-	width: 400px;
-	height: 200px;
+	width: 80%;
+	height: 500px;
 	border: 1px solid black;
-	margin: auto;
+	margin: 50px auto;
 	text-align: center;
 	line-height: 200px;
-	color: white;
 	font-weight: bold;
 	display: none;
 	position: relative;
 }
 
-button {
-	width: 20%;
-	height: 50px;
-	margin: 0px;
-}
-
-.b2 {
-	position: absolute;
-	top: 400px;
-	right: 150px;
-}
-
-.b {
-	position: absolute;
-	top: 400px;
-	left: 150px;
-}
-
-img {
-	width: 100%;
-	height: 400px;
+#d_id {
+	position: relative;
 }
 
 #foot {
 	background-color: wheat;
 	width: 100%;
-	height: 10%;
-	margin-bottom: 0px;
-	position: absolute;
+	height: 100px;
 	bottom: 0px;
 	font-size: 10px;
+	margin-top: 50px;
+	padding: 10px;
 }
 </style>
 <script type="text/javascript">
@@ -103,37 +116,42 @@ img {
 <body>
 	<div>
 		<%--중앙 가이드, 시작하기 --%>
-		<img alt="" src="../img/dark.gif" onclick="navClick('guide.jsp')">
-
-	</div>
-	<div>
-
-		<%--가이드이미지 --%>
-		<div>
-			<button class="b"
-				style="width: 5%; margin-top: 20px background-color: green;"
-				name="before" onclick="be(this.form)"><<</button>
-			<div id="img1" class="box">
-				<img alt=".." src="../img/dark.gif" onclick="navClick('guide.jsp')">1
-			</div>
-			<div id="img2" class="box">
-				<img alt=".." src="../img/light.gif" onclick="navClick('guide.jsp')">2
-			</div>
-			<div id="img3" class="box">
-				<img alt="" src="../img/pic1.jpg" onclick="navClick('guide.jsp')">3
-			</div>
-			<div id="img4" class="box">
-				<img alt="" src="../img/pic2.jpg" onclick="navClick('guide.jsp')">4
-			</div>
-			<div id="img5" class="box">
-				<img alt="" src="../img/pic3.jpg" onclick="navClick('guide.jsp')">5
-			</div>
-			<button class="b2" style="width: 5%;" name="after"
-				onclick="af(this.form)">>></button>
+		<div id="d_id">
+			<img alt="" src="">
 		</div>
-	</div>
-	<div>
-		<footer id="foot">footer정보</footer>
+		<div>
+			<button class="btn" style="margin-left: 2%;" onclick="navClick('login.jsp')">시작하기</button>
+			<button class="btn" style="margin-left: 20%;" onclick="navClick('guide.jsp')">가이드</button>
+		</div>
+		<div>
+
+			<%--가이드이미지 --%>
+			<div>
+				<button class="b" style="width: 5%;" name="before"
+					onclick="be(this.form)"><<</button>
+				<button class="b2" style="width: 5%;" name="after"
+					onclick="af(this.form)">>></button>
+				<div id="img1" class="box">
+					<img alt=".." src="../img/dark.gif" onclick="navClick('guide.jsp')">
+				</div>
+				<div id="img2" class="box">
+					<img alt=".." src="../img/light.gif"
+						onclick="navClick('guide.jsp')">
+				</div>
+				<div id="img3" class="box">
+					<img alt="" src="../img/pic1.jpg" onclick="navClick('guide.jsp')">
+				</div>
+				<div id="img4" class="box">
+					<img alt="" src="../img/pic2.jpg" onclick="navClick('guide.jsp')">
+				</div>
+				<div id="img5" class="box">
+					<img alt="" src="../img/pic3.jpg" onclick="navClick('guide.jsp')">
+				</div>
+			</div>
+		</div>
+		<div>
+			<footer id="foot">footer정보</footer>
+		</div>
 	</div>
 	<script>
 		function navClick(loadUrl) {
