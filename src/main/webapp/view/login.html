@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +25,7 @@ input {
 input.in {
 	width: 300px;
 }
+
 #foot {
 	background-color: wheat;
 	width: 100%;
@@ -38,23 +37,20 @@ input.in {
 }
 </style>
 <script type="text/javascript">
-	function test(f) 
-	{
-		alert("id사용가능");
-	}
-</script>
+    </script>
 </head>
 <body>
 	<div id="log">
-		<fieldset style="height: 320px;">
-			<legend>회원가입</legend>
+		<fieldset>
+			<legend>Login</legend>
 			<form>
-				ID <input class="in" type="text" name="id" required>
-				<input type="button" value="중복확인" onclick="test(this.form)"><br>
+				ID <input class="in" type="text" name="id" required><br>
 				PW <input class="in" type="password" name="pw" required><br>
-				PW확인 <input class="in" type="password" name="pwcheck" required><br>
-				이메일 <input class="in" type="text" name="mail" required><br>
-				<input type="button" value="회원가입" onclick="navClick('login.jsp')">
+				<input type="button" value="로그인"
+					onclick="navClick('main.html')"><br> 
+				<input type="button" value="ID 찾기" onclick="navClick('id_find.html')">
+				<input type="button" value="PW 찾기" onclick="navClick('pw_find.html')"><br>
+				<input type="button" value="카카오 간편회원 가입" onclick="navClick('join.html')">
 			</form>
 		</fieldset>
 	</div>
