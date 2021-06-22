@@ -38,14 +38,19 @@ input.in {
 }
 </style>
 <script type="text/javascript">
-    </script>
+	function test(f) 
+	{
+		alert("id사용가능");
+	}
+</script>
 </head>
 <body>
 	<div id="log">
 		<fieldset style="height: 300px;">
 			<legend>회원가입</legend>
 			<form>
-				ID <input class="in" type="text" name="id" required><br>
+				ID <input class="in" type="text" name="id" required>
+				<input type="button" value="중복확인" onclick="test(this.form)"><br>
 				PW <input class="in" type="password" name="pw" required><br>
 				PW확인 <input class="in" type="password" name="pwcheck" required><br>
 				이메일 <input class="in" type="text" name="mail" required><br>
