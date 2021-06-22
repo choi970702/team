@@ -31,7 +31,7 @@ input.in {
 #foot {
 	background-color: wheat;
 	width: 100%;
-	height: 20%;
+	height: 15%;
 	margin-bottom: 0px;
 	position: absolute;
 	bottom: 0px;
@@ -48,9 +48,11 @@ input.in {
 			<form>
 				ID <input class="in" type="text" name="id" required><br>
 				PW <input class="in" type="password" name="pw" required><br>
-				<input type="button" value="Login"
-					onclick="navClick('mainpage.jsp')"><br> <input
-					type="button" value="카카오 간편회원 가입" onclick="navClick('join.jsp')">
+				<input type="button" value="로그인"
+					onclick="navClick('mainpage.jsp')"><br> 
+				<input type="button" value="ID 찾기" onclick="navClick('id_find.jsp')">
+				<input type="button" value="PW 찾기" onclick="navClick('pw_find.jsp')"><br>
+				<input type="button" value="카카오 간편회원 가입" onclick="navClick('join.jsp')">
 			</form>
 		</fieldset>
 	</div>
