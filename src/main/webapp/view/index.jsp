@@ -89,7 +89,7 @@
     <div id="header">
       <h1 id="logo">Logo</h1>
       <div id="nav">
-        <div onclick="navClick('guide.jsp')">시작하기</div>
+        <div onclick="navClick('mainpage.jsp')">시작하기</div>
         <div onclick="navClick('guide.jsp')">가이드</div>
         <div onclick="navClick('qna.jsp')">문의/공지</div>
       </div>
